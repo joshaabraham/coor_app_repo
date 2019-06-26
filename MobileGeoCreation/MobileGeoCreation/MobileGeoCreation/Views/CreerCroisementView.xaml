@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MobileGeoCreation.ViewModels;assembly=MobileGeoCreation"
+             x:Class="MobileGeoCreation.Views.CreerCroisementView">
+    <ContentPage.BindingContext>
+        <local:CreerCroisementViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Creation nouveau croisement"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                    FontSize="Title"/>
+            <Label Text="Point central"
+                   FontSize="Subtitle"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <!-- Ici insertion d'une carte avec un point de repere que l'on peut glisser 
+            et qui est bindine view to view avec les corrdonees affiche en dessous -->
+            
+            
+            <Label 
+                Text="{Binding Latitude, StringFormat='Latitude est : {0:F2}'}"        
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"/>
+
+            <Label 
+                Text="{Binding Longitude, StringFormat='Longitude est : {0:F2}'}"        
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"/>
+
+            <Label 
+                Text="{Binding Altitude, StringFormat='Altitude est : {0:F2}'}"        
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"/>
+
+            <StackLayout
+                Orientation="Horizontal"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                BackgroundColor="Beige">
+                <Button
+                    Text="Fixer"
+                    Padding="5"
+                    BorderWidth="2"
+                    BackgroundColor="Aqua"></Button>
+            </StackLayout>
+            
+            
+                <Button
+                    Text="Sauver"
+                    Padding="5"
+                    BorderWidth="2"
+                    BackgroundColor="Aquamarine"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
